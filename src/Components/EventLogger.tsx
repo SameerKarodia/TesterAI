@@ -126,12 +126,12 @@ const EventLogger: React.FC<EventLoggerProps> = ({ emotion }) => {
               Predictive Stress Level: {event.predictive_stress_level}/10
               <br />
               Emotion-Based Stress Level: {event.emotion_based_stress_level}/10
-              <button
+              {/* <button
                 onClick={() => setSelectedEventId(event.id)}
                 className={styles.buttonSecondary}
               >
                 Journal for this event
-              </button>
+              </button> */}
             </li>
           ))}
         </ul>
