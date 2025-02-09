@@ -4,16 +4,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background-image: url("../assets/starryPic2.jpg");
-    background-size: cover;
+    background-image: url("../assets/starryPic.jpg");
+    background-size: contain;
+    background-position: center;
 }
-.checkinContainer h1{
+.checkinHeader{
+    display: flex;
+    justify-content: space-between; 
+    flex-direction:row;
+    text-align:center;
+    width:100%;
+    position: relative;
+}
+.checkinHeader h1{
     font-size: 3rem;
     color: white;
     font-weight:bold;
     font-family: "Alex Brush", cursive;
     text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
+    
+}
+.checkinHeader button{
+    border:2px solid black;
+    background-color:#ededed;
+    border-radius:10px;
+    box-shadow: 0 3px 8px #ededed;
+    padding: 10px 20px;
+    margin-left:auto;
+
+
+
 }
 .checkinWebcam{
     display:flex;

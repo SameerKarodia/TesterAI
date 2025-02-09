@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./TextAnalyzer.module.css"; // Import the modular CSS
 
 type Event = {
   id: number;
@@ -94,35 +95,32 @@ const EventLogger: React.FC<EventLoggerProps> = ({ emotion }) => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-2">Log an Upcoming Event</h2>
+    <div className={styles.container}>
+      <h2 className="fw-bold mb-3">Log an Upcoming Event</h2>
       <input
         type="text"
         placeholder="Event Name (e.g., Exam, Meeting)"
         value={eventName}
         onChange={(e) => setEventName(e.target.value)}
-        className="border p-2 rounded w-full mb-2"
+        className="form-control mb-2"
       />
       <input
         type="date"
         value={eventDate}
         onChange={(e) => setEventDate(e.target.value)}
-        className="border p-2 rounded w-full mb-2"
+        className="form-control mb-2"
       />
-      <button
-        onClick={logEvent}
-        className="bg-blue-500 text-white p-2 rounded w-full"
-      >
+      <button onClick={logEvent} className="btn btn-primary w-100">
         Log Event
       </button>
 
-      <h3 className="text-lg font-bold mt-4">Upcoming Events</h3>
+      <h3 className="h5 fw-bold mt-4">Upcoming Events</h3>
       {events.length === 0 ? (
         <p>No events logged yet.</p>
       ) : (
-        <ul className="mt-2">
+        <ul className="list-group mt-2">
           {events.map((event) => (
-            <li key={event.id} className="border p-2 rounded mb-1">
+            <li key={event.id} className="list-group-item">
               <strong>{event.event_name}</strong> - {event.event_date}
               <br />
               Predictive Stress Level: {event.predictive_stress_level}/10
@@ -130,7 +128,7 @@ const EventLogger: React.FC<EventLoggerProps> = ({ emotion }) => {
               Emotion-Based Stress Level: {event.emotion_based_stress_level}/10
               <button
                 onClick={() => setSelectedEventId(event.id)}
-                className="bg-green-500 text-white p-1 rounded mt-1"
+                className="btn btn-success btn-sm mt-2"
               >
                 Journal for this event
               </button>
@@ -141,17 +139,14 @@ const EventLogger: React.FC<EventLoggerProps> = ({ emotion }) => {
 
       {selectedEventId && (
         <div className="mt-4">
-          <h3 className="text-lg font-bold">Journal for Selected Event</h3>
+          <h3 className="h5 fw-bold">Journal for Selected Event</h3>
           <textarea
             placeholder="How are you feeling about this event?"
             value={journalEntry}
             onChange={(e) => setJournalEntry(e.target.value)}
-            className="border p-2 rounded w-full mb-2"
+            className="form-control mb-2"
           />
-          <button
-            onClick={logJournal}
-            className="bg-blue-500 text-white p-2 rounded w-full"
-          >
+          <button onClick={logJournal} className="btn btn-primary w-100">
             Log Journal Entry
           </button>
         </div>
@@ -190,21 +185,19 @@ const TextAnalyzer: React.FC = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className={styles.container}>
       <textarea
         placeholder="Type something here..."
         value={text}
         onChange={(e) => setText(e.target.value)}
-        className="border p-2 w-full rounded-lg"
+        className="form-control"
+        style={{ minHeight: "150px" }}
       />
-      <button
-        onClick={analyzeText}
-        className="mt-2 bg-blue-500 text-white p-2 rounded"
-      >
+      <button onClick={analyzeText} className="btn btn-primary w-100 mt-2">
         Analyze Text
       </button>
       {emotion && (
-        <p className="mt-4 text-lg">
+        <p className="mt-4 fs-5">
           Detected Emotion: <strong>{emotion.emotion}</strong>
           {emotion.confidence !== null
             ? ` (Confidence: ${emotion.confidence.toFixed(2)})`
