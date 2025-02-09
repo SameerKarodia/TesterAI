@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./SignupPage.module.css";
 import FadeIn from "../Components/FadeIn";
 import { useNavigate, Link } from "react-router-dom";
