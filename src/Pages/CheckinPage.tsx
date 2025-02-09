@@ -5,14 +5,13 @@ import styles from "./CheckinPage.module.css";
 import { Link } from "react-router-dom";
 
 function CheckinPage() {
-  // Assuming you have a way to determine the emotion, for example, from WebcamCapture or TextAnalyzer
-  const emotion = ""; // Replace this with the actual emotion value
+  const emotion = "";
 
   return (
     <div className={styles.checkinContainer}>
       <div className={styles.checkinHeader}>
         <h1>Emotion Detection</h1>
-        <Link to="/WelcomePage">
+        <Link to="/">
           <button>Log Out</button>
         </Link>
       </div>
