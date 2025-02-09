@@ -197,7 +197,7 @@ const TextAnalyzer: React.FC = () => {
         Analyze Text
       </button>
       {emotion && (
-        <p className="mt-4 fs-5">
+        <p className={styles.emotion}>
           Detected Emotion: <strong>{emotion.emotion}</strong>
           {emotion.confidence !== null
             ? ` (Confidence: ${emotion.confidence.toFixed(2)})`
