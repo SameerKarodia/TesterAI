@@ -1,6 +1,6 @@
 import styles from "./LoginPage.module.css";
 import FadeIn from "../Components/FadeIn";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 function LoginPage() {
   return (
     <div className={styles.backgroundImage}>
@@ -10,14 +10,16 @@ function LoginPage() {
             <h1>Enter Login Details</h1>
             <input type="text" placeholder="Username" />
             <input type="password" placeholder="Password" />
-            <button>Login</button>
+            <Link to={"/CheckinPage"}>
+              <button>Login</button>
+            </Link>
           </div>
           <div className={styles.signupBox}>
             <h4>
               Dont have an account?
-              {/* <Link to="/SignupPage"> */}
-              <a href="#">Sign Up Here</a>
-              {/* </Link> */}
+              <Link to="/SignupPage">
+                <a href="#">Sign Up Here</a>
+              </Link>
             </h4>
           </div>
         </div>

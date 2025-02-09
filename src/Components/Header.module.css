@@ -6,6 +6,7 @@
 	flex-direction:column;
     text-align:center;
 	width:100%;
+	margin-right:50px;
 }
 
 
@@ -22,12 +23,34 @@
     padding:10%;
     padding-top:75px;
 
+
 }
 
 @media (min-width: 800px){
     .header h1 {
         font-size: 7rem;
     }
+	.header h1 {
+		color: white;
+		font-family: 'Alex Brush', cursive;
+		text-align: center;
+		justify-content: center; 
+		font-weight:bold;
+		font-size:5rem;
+		font-weight:bold;
+		text-align: center;
+		padding:10%;
+		padding-top:75px;
+	
+	}
+	.header {
+		background-color: transparent;
+		display: flex;
+		justify-content: center; 
+		flex-direction:column;
+		text-align:center;
+		width:100%;
+	}
 }
 
 
