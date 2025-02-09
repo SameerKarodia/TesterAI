@@ -46,7 +46,8 @@
 
 @media (max-width: 700px) {
     .checkinHeader h1{
-        font-size: 2rem;
+        margin-top:2%;
+        font-size: 1.6rem;
         width:70%;
     }
     .checkinHeader button{
